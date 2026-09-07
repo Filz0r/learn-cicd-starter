@@ -21,6 +21,10 @@ type apiConfig struct {
 	DB *database.Queries
 }
 
+func unused() {
+	// nothing to user here
+}
+
 //go:embed static/*
 var staticFiles embed.FS
 

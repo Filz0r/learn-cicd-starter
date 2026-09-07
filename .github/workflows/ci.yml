@@ -34,6 +34,12 @@ jobs:
         with:
           go-version: "1.26.0"
 
+      - uses: dominikh/staticcheck-action@v1
+        with:
+          version: "latest"
+
       - name: Check Code Formatting
         run: test -z $(go fmt ./...)
-        
+
+      - name: Check for unused code
+        run: staticcheck ./...
